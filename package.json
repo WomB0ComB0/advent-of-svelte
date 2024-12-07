@@ -2,10 +2,19 @@
   "name": "advent-of-svelte",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+    "clean": "bun run clean.ts",
+    "start": "bun run start.ts",
+    "run": "bun run run.ts"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "vite": "^6.0.3"
   }
 }
