@@ -17,7 +17,7 @@
 
   const choice = args[2] ?? 'build';
 
-  if (choice === 'preview') {
+  if (choice === 'build') {
     await $`npx vite build ./${day}-${topic}`
       .then(res => console.log(res.stdout.toString()))
       .catch(err => console.error('Error during build or preview:', err));
