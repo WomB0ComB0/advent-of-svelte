@@ -9,12 +9,5 @@
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
-    <script>
-      const theme = new URL(window.location).searchParams.get('theme');
-      if (theme) {
-        document.documentElement.classList.remove('light', 'dark');
-        document.documentElement.classList.add(theme || 'light')
-      }
-    </script>
   </body>
 </html>

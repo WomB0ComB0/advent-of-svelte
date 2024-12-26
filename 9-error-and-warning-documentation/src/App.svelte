@@ -1,47 +1,50 @@
-<script lang="ts">
-  import svelteLogo from './assets/svelte.svg'
-  import viteLogo from '/vite.svg'
-  import Counter from './lib/Counter.svelte'
+<script>
+  let user = $state({
+    firstname: 'Santa',
+    lastname: 'Claus',
+    avatar: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNiAzNiI+PHBhdGggZmlsbD0iI0ZGREM1RCIgZD0iTTUgMjFjMCAyLjIwOS0xLjExOSA0LTIuNSA0UzAgMjMuMjA5IDAgMjFzMS4xMTktNCAyLjUtNFM1IDE4Ljc5MSA1IDIxeiIvPjxwYXRoIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbD0iI0ZGREM1RCIgZD0iTTMgMTguNTYyQzMgMTAuMDM3IDguMzczIDMuMTI1IDE1IDMuMTI1czEyIDYuOTEyIDEyIDE1LjQzOEMyNyAyNy4wODggMjEuNjI3IDM0IDE1IDM0UzMgMjcuMDg4IDMgMTguNTYyeiIvPjxwYXRoIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbD0iI0REMkU0NCIgZD0iTTIwIDBjLS4yNDkgMC0uNDc4LjAwNy0uNzEzLjAxMkMxOS4xOS4wMSAxOS4wOTcgMCAxOSAwIDkgMCAyIDQuNTgyIDIgOXM2LjM3MyA0IDEzIDRjNC40NDIgMCA3LjY0OCAwIDkuOTY2LS4wODZMMjUgMTNsNiAxNWgycy4zNDMtMy4wNTUgMS03YzEtNiAuNTMzLTIxLTE0LTIxeiIvPjxwYXRoIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbD0iI0ZGREM1RCIgZD0iTTMwIDIxYzAgMi4yMDktMS4xMTkgNC0yLjUgNFMyNSAyMy4yMDkgMjUgMjFzMS4xMTktNCAyLjUtNCAyLjUgMS43OTEgMi41IDR6Ii8+PHBhdGggeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmaWxsPSIjNjYyMTEzIiBkPSJNMTAgMjFjLS41NTIgMC0xLS40NDctMS0xdi0yYzAtLjU1Mi40NDgtMSAxLTFzMSAuNDQ4IDEgMXYyYzAgLjU1My0uNDQ4IDEtMSAxem0xMCAwYy0uNTUzIDAtMS0uNDQ3LTEtMXYtMmMwLS41NTIuNDQ3LTEgMS0xczEgLjQ0OCAxIDF2MmMwIC41NTMtLjQ0NyAxLTEgMXoiLz48cGF0aCB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9IiNCNzc1NUUiIGQ9Ik0xNiAyNmgtMmMtLjU1MiAwLTEtLjQ0Ny0xLTFzLjQ0OC0xIDEtMWgyYy41NTIgMCAxIC40NDcgMSAxcy0uNDQ4IDEtMSAxeiIvPjxwYXRoIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbD0iI0U2RTdFOCIgZD0iTTI3IDI1YzAtMi0yLjI5My0uNzA3LTMgMC0xIDEtMyAzLTUgMi0yLjgyOC0xLjQxNC00LTEtNC0xcy0xLjE3MS0uNDE0LTQgMWMtMiAxLTQtMS01LTItLjcwNy0uNzA3LTMtMi0zIDBzMSAyIDEgMmMtMSAyIDEgMyAxIDMgMCAzIDMgMyAzIDMgMCAzIDQgMiA0IDIgMSAxIDMgMSAzIDFzMiAwIDMtMWMwIDAgNCAxIDQtMiAwIDAgMyAwIDMtMyAwIDAgMi0xIDEtMyAwIDAgMSAwIDEtMnoiLz48cGF0aCB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9IiNGRkRDNUQiIGQ9Ik0xNSAyOGM3IDAgNCAyIDAgMnMtNy0yIDAtMnoiLz48ZWxsaXBzZSB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9IiNEMUQzRDQiIGN4PSIzIiBjeT0iMTQiIHJ4PSIyIiByeT0iNCIvPjxlbGxpcHNlIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbD0iI0QxRDNENCIgY3g9IjI2IiBjeT0iMTQiIHJ4PSIyIiByeT0iNCIvPjxjaXJjbGUgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmaWxsPSIjRjFGMkYyIiBjeD0iMzIiIGN5PSIyOSIgcj0iNCIvPjxwYXRoIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbD0iI0YxRjJGMiIgZD0iTTI5IDEyYzAgMS4xMDQtLjg5NiAyLTIgMkgyYy0xLjEwNCAwLTItLjg5Ni0yLTJ2LTFjMC0xLjEwNC44OTYtMiAyLTJoMjVjMS4xMDQgMCAyIC44OTYgMiAydjF6Ii8+PC9zdmc+'
+  })
 </script>
 
-<main>
-  <div>
-    <a href="https://vite.dev" target="_blank" rel="noreferrer">
-      <img src={viteLogo} class="logo" alt="Vite Logo" />
-    </a>
-    <a href="https://svelte.dev" target="_blank" rel="noreferrer">
-      <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
-    </a>
-  </div>
-  <h1>Vite + Svelte</h1>
+<header>
+  <img alt="{user.firstname} {user.lastname} avatar" src={user.avatar} />
+  <h1>Hello {user.firstname} {user.lastname}</h1>
+</header>
 
-  <div class="card">
-    <Counter />
-  </div>
+<label>
+  <input bind:value={user.firstname} /> firstname
+</label>
 
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank" rel="noreferrer">SvelteKit</a>, the official Svelte app framework powered by Vite!
-  </p>
+<label>
+  <input bind:value={user.lastname} /> lastname
+</label>
 
-  <p class="read-the-docs">
-    Click on the Vite and Svelte logos to learn more
-  </p>
-</main>
+<!-- this will trigger a warning with a link -->
+<button 
+  type="button"
+  onclick={() => console.log(user)}
+>
+  yule log
+</button>
 
 <style>
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
+  header {
+    display: flex;
+    align-items: center;
+    gap: 1em;
   }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
+
+  img {
+    width: 3em;
+    height: 3em;
   }
-  .logo.svelte:hover {
-    filter: drop-shadow(0 0 2em #ff3e00aa);
+
+  label {
+    display: block;
   }
-  .read-the-docs {
-    color: #888;
+
+  input, button {
+    font: inherit;
+    margin: 0.2em 0;
   }
 </style>
